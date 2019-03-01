@@ -1,0 +1,40 @@
+[user]
+	name = Edward Robinson
+	email = proteenx11@gmail.com
+[color]
+	ui = auto
+[push]
+	default = current
+[merge]
+	tool = p4merge
+[mergetool]
+	prompt = false
+	keepBackup = false
+[difftool]
+	prompt = false
+[diff]
+	tool = p4merge
+	submodule = log
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[credential]
+	helper = cache
+[core]
+	editor = vim
+	autocrlf = input
+	eol = lf
+[mergetool "p4merge"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
+[difftool "p4merge"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge $LOCAL $REMOTE
+[pager]
+       diff = diff-so-fancy | less --tabs=1,5 -RFX
+       show = diff-so-fancy | less --tabs=1,5 -RFX
+[alias]
+	c = checkout
+	a = add
+	d = diff
+	r = reset
+
